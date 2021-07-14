@@ -1,0 +1,186 @@
+1. 
+Deadlocks can be described more precisely in terms of a directed graph called a
+Answers
+1. Bar Graph
+2. Resource Allocation Graph  //
+3. Pie Chart
+4. Line Graph
+
+
+
+2. 
+The _________________is used as an index into the page table.
+Answers
+1. Frame Bit
+2. Page Number   //
+3. Page Offset
+4. Frame Offset
+
+
+
+3. 
+An OS program module that selects the next job to be admitted for execution is called as
+Answers
+1. Compiler
+2. Throughput
+3. Scheduler  //
+4. Dispatcher
+
+
+
+4. 
+Bringing the page into memory only when it is needed this mechanism is called as
+Answers
+1. Deadlock
+2. Page Fault
+3. Paging
+4. Demand Paging  //
+
+
+5. 
+Each entry in segment table has a ______________
+Answers
+1. Segment peak
+2. Segment Base   //
+3. Segment Value
+4. None of the above
+
+
+
+6. 
+Banker's algorithm is used
+Answers
+1. to detect deadlock  //
+2. to avoid deadlock
+3. to prevent deadlock
+4. to recover deadlock
+
+
+
+7. 
+The valid-invalid bit, in virtual memory case, when valid bit=1 indicates?
+Answers
+1. Page is  legal
+2. Page is not in main memory
+3. Page is in main memory   //
+4. Page is illegal
+
+
+
+8. 
+The init process which always has a pid of
+Answers
+1. 0
+2. 1    //
+3. 2
+4. 3
+
+
+
+9. 
+In the ______ algorithm, the disk arm goes as far as the final request in each direction, then reverses direction immediately without going to the end of the disk.
+Answers
+1. LOOK   //
+2. FCFS
+3. SCAN
+4. CSCAN
+
+
+
+10. 
+A Page Fault occurs ?
+Answers
+1. When the requested page is not in the main memory  //
+2. When the requested page is in the main memory
+3. When the process enters in blocked state
+4. When the process is in ready state
+
+
+11. 
+When a memory block is allocated to a process is sligtly larger than the size of the process then
+Answers
+1. Internal fragmentation occurs   //
+2. External fragmentation occurs
+3. Neither A nor B
+4. Both A and B
+
+
+
+12. 
+A Small program which loads kernel into memory is called as _______
+Answers
+1. ROM
+2. BootStrap Loader   //
+3. BIOS
+
+
+13. 
+FIFO Scheduling is
+Answers
+1. Non Preemptive  //
+2. Preemptive
+3. Deadline Scheduling
+4. Fair Share Scheduling
+
+
+14. 
+The Time taken by disk arm to locate the specific address of sector for getting information is called
+Answers
+1. Seek Time
+2. Rotational Latency
+3. Access Time           //
+4. Response Time
+
+
+15. 
+Solution on Starvation is
+Answers
+1. Aging    //
+2. Caching
+3. Slicing
+4. Priortization
+
+
+16. 
+The run time mapping from virtual to physical addresses is done by a hardware device called the ____________
+Answers
+1. Memory Management Unit   //
+2. Virtual to Physical Mapper
+3. Memory Mapping Unit
+4. None of the above
+
+
+17. 
+Virtual memory is normally implemented by____________
+Answers
+1. Buses
+2. Swapping + Demand Paging   //
+3. Virtualization
+4. None of the above
+
+Answers
+1. Process Control Block  //
+2. Program Control Block
+3. Process Communication Block
+4. None of the above
+18. 
+What is PCB
+
+
+
+19. 
+Which of the following is software technique
+Answers
+1. Disk Cache  //
+2. One or more levels of Cache memory
+3. Cache memory
+4. ROM
+
+
+
+20. What is convoy effect?
+Answers
+1. Longer Processes waiting for shorter process to complete
+2. Shorter Processes waiting for longer process to complete   //
+3. Process is not present in main memory
+4. None of the above

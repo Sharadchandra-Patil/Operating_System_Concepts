@@ -1,3 +1,0 @@
-# OperatingSystemConcepts
-
-OperatingSystemConcepts

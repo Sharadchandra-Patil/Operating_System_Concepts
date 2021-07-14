@@ -1,0 +1,55 @@
+1. 
+SJF scheduling under non-preemptive algorithm is also called as
+Ans - shortest next time first
+
+
+2. 
+Which of the following synchronization tool is used to avoid data inconsistency if resource can be acquired by more than one processes?
+Ans - Counting semaphore
+
+
+3. 
+Which of the following synchronization tool is used when a resource can be acquired by more than one processes at a time.
+Ans - Counting semaphore
+
+
+4. 
+Which of the following is not a Deadlock handling method?
+
+
+
+5. 
+Which of the following CPU scheduling algorithm is preemptive?
+
+
+
+6. 
+Concurrent access to shared data may result in __________.
+Ans - Data inconsistency problem
+
+
+7. 
+The interval from the time of submission of a process to the time of completion is termed as __________.
+Ans - Turn around time
+
+
+8. 
+In which of the following IPC mechanism processes can communicates across machines which are at remote distance?
+Ans - socket
+
+
+
+
+9. 
+Which of the following CPU scheduling algorithm ensures minimum response time?
+Ans - Round Robin 
+
+
+
+10. 
+Which of the following is not the CPU scheduling criteria
+Answers
+1. Throughput
+2. Waiting Time
+3. Response Time
+4. Execution Time //

